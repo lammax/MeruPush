@@ -1,2 +1,2 @@
 # MeruPush
-Pushes notifications
+Push notifications
