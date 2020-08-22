@@ -124,7 +124,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        doPushNotificationInfo(userInfo: userInfo)
+        
+        PushNotificationManager.doPushNotificationInfo(userInfo: userInfo)
 
       completionHandler(UIBackgroundFetchResult.newData)
     }
@@ -136,39 +137,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                               withCompletionHandler completionHandler: @escaping () -> Void) {
     
     let userInfo = response.notification.request.content.userInfo
-    doPushNotificationInfo(userInfo: userInfo)
+    
+    PushNotificationManager.doPushNotificationInfo(userInfo: userInfo)
     
     completionHandler()
   }
     
-    func doPushNotificationInfo(userInfo: [AnyHashable: Any]) {
-        
-        var eventID: String?
-        
-        print(userInfo)
-        
-        userInfo.forEach { (key, value) in
-            let keyName = key.base as? String
-            let value = value as? String
-            switch keyName {
-            case .some(let s):
-                switch s {
-                case "notificationEventId":
-                    eventID = value
-                case "body":
-                    settings.bodyText = value ?? ""
-                default:
-                    break
-                }
-            case .none:
-                break
-            }
-        }
-        
-        guard eventID != nil else { fatalError("Wrong json data!") }
-        
-        let event = Events(eventID: eventID!)
-        
-        settings.currentScreen = event.screen
-    }
+    
 }

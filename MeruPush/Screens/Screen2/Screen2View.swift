@@ -21,11 +21,14 @@ struct Screen2View: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: 20) {
+            
             Text("Screen 2")
+            
             Text(settings.bodyText)
                 .lineLimit(nil)
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: UIScreen.main.bounds.width - 100.0)
+            
         }
         .onAppear {
             self.intent.setup(settings: self.settings)

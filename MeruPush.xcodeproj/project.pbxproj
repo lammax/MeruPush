@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0432A01F24F1B41900D805EB /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432A01E24F1B41900D805EB /* Events.swift */; };
 		0432A02224F1CFB200D805EB /* NetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432A02124F1CFB200D805EB /* NetManager.swift */; };
+		0432A02424F1D1E300D805EB /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432A02324F1D1E300D805EB /* PushNotificationManager.swift */; };
 		0448AC6224EEEB670006D7CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448AC6124EEEB670006D7CA /* AppDelegate.swift */; };
 		0448AC6424EEEB670006D7CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448AC6324EEEB670006D7CA /* SceneDelegate.swift */; };
 		0448AC6624EEEB670006D7CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448AC6524EEEB670006D7CA /* ContentView.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		0432A01E24F1B41900D805EB /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		0432A02124F1CFB200D805EB /* NetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetManager.swift; sourceTree = "<group>"; };
+		0432A02324F1D1E300D805EB /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		0448AC5E24EEEB670006D7CA /* MeruPush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeruPush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0448AC6124EEEB670006D7CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0448AC6324EEEB670006D7CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				0432A02124F1CFB200D805EB /* NetManager.swift */,
+				0432A02324F1D1E300D805EB /* PushNotificationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0432A02424F1D1E300D805EB /* PushNotificationManager.swift in Sources */,
 				044A993B24EF090B00B675F3 /* Screen2Model.swift in Sources */,
 				044A994024EF092500B675F3 /* StartScreenView.swift in Sources */,
 				0448AC6224EEEB670006D7CA /* AppDelegate.swift in Sources */,

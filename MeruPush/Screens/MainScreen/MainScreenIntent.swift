@@ -14,20 +14,10 @@ import SwiftUI
 
 class MainScreenIntent: ObservableObject {
     
-    //private let data = DataManager.sharedInstance
     private var settings: CommonSettings!
-    
-    @Published var onAction: (() -> Void)?
     
     func setup(settings: CommonSettings) {
         self.settings = settings
-        self.setupActions()
-    }
-    
-    private func setupActions() {
-        self.onAction = {
-            print("Do your action here!")
-        }
     }
     
 }
