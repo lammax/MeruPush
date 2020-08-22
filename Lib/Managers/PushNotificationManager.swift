@@ -36,7 +36,10 @@ class PushNotificationManager {
             }
         }
         
-        guard eventID != nil else { fatalError("Wrong json data!") }
+        guard eventID != nil else {
+            settings.currentScreen = .start
+            return
+        }
         
         let event = Events(eventID: eventID!)
         
