@@ -32,7 +32,9 @@ class StartScreenIntent: ObservableObject {
         self.registerDevice = {
             let api = REST.API.Token.putPushToken
             let url = api.getUrl(for: Servers.addresses.first!)!
-            let regModel = Token.PutPush(tokenUUID: "50cbaa17-3fe5-4d1a-a18b-e4b43e788d0", deviceId: "e901ff3d1e7ff5e1e98f4d95e1cff5e1e98f4d95e1c", pushToken: self.settings.pushToken)
+            //tokenUUID: "50cbaa17-3fe5-4d1a-a18b-e4b43e788d01"
+            //"deviceId": "e901ff3d1e7ff5e1e98f4d95e1cff5e1e98f4d95e1c",
+            let regModel = Token.PutPush(pushToken: self.settings.pushToken)
             let data = try? self.encoder.encode(regModel)
             self.net.dataTask(for: data, with: api.additionalHeaders , with: url, restMethod: .POST) { (data, response, error) in
                 print(data)

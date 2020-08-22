@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1047749727633-e0p1b9b9lqet6bpjp87lvurmhq2tdkn2.apps.googleusercontent.com</string>
+	<string>1047749727633-jfhn3b7t8nfmq2sqpn6odcqfbila4flu.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1047749727633-e0p1b9b9lqet6bpjp87lvurmhq2tdkn2</string>
+	<string>com.googleusercontent.apps.1047749727633-jfhn3b7t8nfmq2sqpn6odcqfbila4flu</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDeYmnGlZbbjm2pIRXyMMOL1-75B3wLpvA</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.merusoft.testpush</string>
+	<string>com.merusoft.testpush1</string>
 	<key>PROJECT_ID</key>
 	<string>smart-office-merusoft</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1047749727633:ios:ef57ee8ffac7d493933630</string>
+	<string>1:1047749727633:ios:597f603a8e819551933630</string>
 	<key>DATABASE_URL</key>
 	<string>https://smart-office-merusoft.firebaseio.com</string>
 </dict>

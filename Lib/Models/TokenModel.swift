@@ -11,8 +11,8 @@ import Foundation
 enum Token {
     
     struct PutPush: Encodable {
-        let tokenUUID: String
-        let deviceId: String
+        let tokenUUID: String = "50cbaa17-3fe5-4d1a-a18b-e4b43e788d01" //UUID().uuidString
+        let deviceId: String = "e901ff3d1e7ff5e1e98f4d95e1cff5e1e98f4d95e1c"
         let pushToken: String
     }
     

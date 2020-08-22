@@ -26,7 +26,7 @@ import FirebaseInstanceID
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
     
     let settings = CommonSettings.sharedInstance
-    let deviceToken: String = "dDR8x4eTSM-ELaK8lhARY1:APA91bFThFfsz4VioVoUEXe_I9hbuVi60OtH3fFcDPYIdfS2c0wxFdeBi8VND3Rw-qI8v_r6t7yXvRbt2MuyFh5DJ5hKDSFOznjjdu8qxk_Mf6DDpOrXr97-HgtvEKr0r_b0BAFleVax"
+    let deviceToken: String = "fVNBzjKpBkLImsLj7X12yC:APA91bGTvd2ILIZDuUy2ZXhJnWTJ8QpSpffC93HaYzUEwVJBGuNQSOzJ0Onh-BDfpXe2jt7RREAKRROg8tuHj3hX-aLTKzdJSfjlikqIH-xNZLQTvn_dPNEBV9dvadKcO5UqkWaOHQ0X"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -59,6 +59,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             .requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
               print("Permission granted: \(granted)")
               guard granted else { return }
+                
+                
+                
                 self.getNotificationSettings()
             }
     }

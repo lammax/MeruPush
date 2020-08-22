@@ -13,7 +13,6 @@
 		0448AC6824EEEB6A0006D7CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0448AC6724EEEB6A0006D7CA /* Assets.xcassets */; };
 		0448AC6B24EEEB6A0006D7CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0448AC6A24EEEB6A0006D7CA /* Preview Assets.xcassets */; };
 		0448AC6E24EEEB6A0006D7CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0448AC6C24EEEB6A0006D7CA /* LaunchScreen.storyboard */; };
-		0448AC7624EEEC4B0006D7CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0448AC7524EEEC4B0006D7CA /* GoogleService-Info.plist */; };
 		044A991E24EF051800B675F3 /* NetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A991D24EF051800B675F3 /* NetService.swift */; };
 		044A992124EF058C00B675F3 /* RESTAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A992024EF058C00B675F3 /* RESTAPIModel.swift */; };
 		044A992A24EF082E00B675F3 /* MainScreenIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A992724EF082E00B675F3 /* MainScreenIntent.swift */; };
@@ -31,6 +30,7 @@
 		044A994124EF092500B675F3 /* StartScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A993E24EF092500B675F3 /* StartScreenModel.swift */; };
 		044A994424EF0AAD00B675F3 /* Servers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A994324EF0AAD00B675F3 /* Servers.swift */; };
 		044A994624EF0B2F00B675F3 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A994524EF0B2F00B675F3 /* TokenModel.swift */; };
+		04BD57C724F19C0C00481D46 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04BD57C624F19C0C00481D46 /* GoogleService-Info.plist */; };
 		4ED220E4BA86CA5BE16C4203 /* Pods_MeruPush.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6104F692EF1E8734C265205D /* Pods_MeruPush.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +43,6 @@
 		0448AC6A24EEEB6A0006D7CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0448AC6D24EEEB6A0006D7CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0448AC6F24EEEB6A0006D7CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0448AC7524EEEC4B0006D7CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0448AC7724EEEE130006D7CA /* MeruPush.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeruPush.entitlements; sourceTree = "<group>"; };
 		044A991D24EF051800B675F3 /* NetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetService.swift; sourceTree = "<group>"; };
 		044A992024EF058C00B675F3 /* RESTAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTAPIModel.swift; sourceTree = "<group>"; };
@@ -62,6 +61,7 @@
 		044A993E24EF092500B675F3 /* StartScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenModel.swift; sourceTree = "<group>"; };
 		044A994324EF0AAD00B675F3 /* Servers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servers.swift; sourceTree = "<group>"; };
 		044A994524EF0B2F00B675F3 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
+		04BD57C624F19C0C00481D46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1003F01F1F7A33FF06673B91 /* Pods-MeruPush.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeruPush.debug.xcconfig"; path = "Target Support Files/Pods-MeruPush/Pods-MeruPush.debug.xcconfig"; sourceTree = "<group>"; };
 		1F6C98BC28BCCFEEE508A219 /* Pods-MeruPush.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeruPush.release.xcconfig"; path = "Target Support Files/Pods-MeruPush/Pods-MeruPush.release.xcconfig"; sourceTree = "<group>"; };
 		6104F692EF1E8734C265205D /* Pods_MeruPush.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeruPush.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,8 +82,8 @@
 		0448AC5524EEEB670006D7CA = {
 			isa = PBXGroup;
 			children = (
+				04BD57C624F19C0C00481D46 /* GoogleService-Info.plist */,
 				044A991B24EF050200B675F3 /* Lib */,
-				0448AC7524EEEC4B0006D7CA /* GoogleService-Info.plist */,
 				0448AC6024EEEB670006D7CA /* MeruPush */,
 				0448AC5F24EEEB670006D7CA /* Products */,
 				38B0C19B2C207C527C4D2721 /* Pods */,
@@ -296,7 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0448AC6E24EEEB6A0006D7CA /* LaunchScreen.storyboard in Resources */,
-				0448AC7624EEEC4B0006D7CA /* GoogleService-Info.plist in Resources */,
+				04BD57C724F19C0C00481D46 /* GoogleService-Info.plist in Resources */,
 				0448AC6B24EEEB6A0006D7CA /* Preview Assets.xcassets in Resources */,
 				0448AC6824EEEB6A0006D7CA /* Assets.xcassets in Resources */,
 			);
@@ -510,14 +510,14 @@
 				CODE_SIGN_ENTITLEMENTS = MeruPush/MeruPush.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MeruPush/Preview Content\"";
-				DEVELOPMENT_TEAM = Z8JVJD6M2F;
+				DEVELOPMENT_TEAM = 8Z3Y8GXGM7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MeruPush/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.merusoft.testpush;
+				PRODUCT_BUNDLE_IDENTIFIER = com.merusoft.testpush1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -532,14 +532,14 @@
 				CODE_SIGN_ENTITLEMENTS = MeruPush/MeruPush.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MeruPush/Preview Content\"";
-				DEVELOPMENT_TEAM = Z8JVJD6M2F;
+				DEVELOPMENT_TEAM = 8Z3Y8GXGM7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MeruPush/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.merusoft.testpush;
+				PRODUCT_BUNDLE_IDENTIFIER = com.merusoft.testpush1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
