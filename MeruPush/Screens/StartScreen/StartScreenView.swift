@@ -20,7 +20,13 @@ struct StartScreenView: View {
     @ObservedObject var intent = StartScreenIntent.sharedInstance
     
     var body: some View {
-        ZStack {
+        VStack(alignment: .center, spacing: 20) {
+            
+            Text(settings.bodyText)
+                .font(.title)
+                .foregroundColor(.white)
+                .background(Color.gray)
+            
             Button(action: {
                 self.intent.registerDevice?()
             }) {

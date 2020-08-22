@@ -23,16 +23,16 @@ import FirebaseInstanceID
  */
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     
     let settings = CommonSettings.sharedInstance
-    let deviceToken: String = "fVNBzjKpBkLImsLj7X12yC:APA91bGTvd2ILIZDuUy2ZXhJnWTJ8QpSpffC93HaYzUEwVJBGuNQSOzJ0Onh-BDfpXe2jt7RREAKRROg8tuHj3hX-aLTKzdJSfjlikqIH-xNZLQTvn_dPNEBV9dvadKcO5UqkWaOHQ0X"
-
+    fileprivate let viewActionIdentifier = "VIEW_IDENTIFIER"
+    fileprivate let viewCategoryIdentifier = "VIEW_CATEGORY"
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
-        //Messaging.setAPNSToken(deviceToken.data(using: .utf8)!)
         UNUserNotificationCenter.current().delegate = self
         registerForPushNotifications()
         getTokenFromServer()
@@ -71,10 +71,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             
             guard settings.authorizationStatus == .authorized else { return }
             
+            self.prepareActions()
+            
             DispatchQueue.main.async {
                 UIApplication.shared.registerForRemoteNotifications()
             }
         }
+    }
+    
+    func prepareActions() {
+        let viewAction = UNNotificationAction(identifier: viewActionIdentifier,
+                                              title: "View",
+                                              options: [.foreground])
+        let viewCategory = UNNotificationCategory(identifier: viewCategoryIdentifier,
+                                                  actions: [viewAction],
+                                                  intentIdentifiers: [],
+                                                  options: [])
+        UNUserNotificationCenter.current().setNotificationCategories([viewCategory])
     }
     
     func getTokenFromServer() {
@@ -84,7 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
           } else if let result = result {
             print("Remote instance ID token: \(result.token)")
             self.settings.pushToken = result.token
-            self.settings.deviceToken = self.deviceToken
+            NetManager.putPushToken(token: result.token)
             //self.instanceIDTokenMessage.text  = "Remote InstanceID token: \(result.token)"
           }
         }
@@ -104,18 +117,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
       // Note: This callback is fired at each app startup and whenever a new token is generated.
     }
     
-    private func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        
-        /*let tokenParts = deviceToken.map { data -> String in
-          return String(format: "%02.2hhx", data)
-        }
-        
-        let token = tokenParts.joined()
-        print("Device Token: \(token)")*/
-        
-        Messaging.messaging().apnsToken = self.deviceToken.data(using: .utf8)!
-    }
-    
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
         // Print full message.
         print(userInfo)
@@ -123,18 +124,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-      // If you are receiving a notification message while your app is in the background,
-      // this callback will not be fired till the user taps on the notification launching the application.
-      // TODO: Handle data of notification
-
-      // With swizzling disabled you must let Messaging know about the message, for Analytics
-      // Messaging.messaging().appDidReceiveMessage(userInfo)
-
-      // Print full message.
-      print(userInfo)
+        doPushNotificationInfo(userInfo: userInfo)
 
       completionHandler(UIBackgroundFetchResult.newData)
     }
 }
 
-
+extension AppDelegate: UNUserNotificationCenterDelegate {
+  func userNotificationCenter(_ center: UNUserNotificationCenter,
+                              didReceive response: UNNotificationResponse,
+                              withCompletionHandler completionHandler: @escaping () -> Void) {
+    
+    let userInfo = response.notification.request.content.userInfo
+    doPushNotificationInfo(userInfo: userInfo)
+    
+    completionHandler()
+  }
+    
+    func doPushNotificationInfo(userInfo: [AnyHashable: Any]) {
+        
+        var eventID: String?
+        
+        print(userInfo)
+        
+        userInfo.forEach { (key, value) in
+            let keyName = key.base as? String
+            let value = value as? String
+            switch keyName {
+            case .some(let s):
+                switch s {
+                case "notificationEventId":
+                    eventID = value
+                case "body":
+                    settings.bodyText = value ?? ""
+                default:
+                    break
+                }
+            case .none:
+                break
+            }
+        }
+        
+        guard eventID != nil else { fatalError("Wrong json data!") }
+        
+        let event = Events(eventID: eventID!)
+        
+        settings.currentScreen = event.screen
+    }
+}

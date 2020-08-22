@@ -20,8 +20,12 @@ struct Screen1View: View {
     @ObservedObject var intent = Screen1Intent()
     
     var body: some View {
-        ZStack {
-            Text("Screen1")
+        VStack(alignment: .center, spacing: 20) {
+            Text("Screen 1")
+            Text(settings.bodyText)
+                .lineLimit(nil)
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: UIScreen.main.bounds.width - 100.0)
         }
         .onAppear {
             self.intent.setup(settings: self.settings)

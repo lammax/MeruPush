@@ -24,6 +24,7 @@ class CommonSettings: ObservableObject {
     @Published var pushToken: String = ""
     @Published var deviceToken: String = ""
     @Published var deviceID: String = ""
+    @Published var bodyText: String = ""
     
     init() {
         if let uuid = UIDevice.current.identifierForVendor?.uuidString {
@@ -42,6 +43,10 @@ class CommonSettings: ObservableObject {
     }
     func clearNavigationStack() {
         self.previousScreens.removeAll()
+    }
+    func showFirstScreen() {
+        self.clearNavigationStack()
+        self.currentScreen = .start
     }
 
 }

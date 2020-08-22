@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0432A01F24F1B41900D805EB /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432A01E24F1B41900D805EB /* Events.swift */; };
+		0432A02224F1CFB200D805EB /* NetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432A02124F1CFB200D805EB /* NetManager.swift */; };
 		0448AC6224EEEB670006D7CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448AC6124EEEB670006D7CA /* AppDelegate.swift */; };
 		0448AC6424EEEB670006D7CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448AC6324EEEB670006D7CA /* SceneDelegate.swift */; };
 		0448AC6624EEEB670006D7CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448AC6524EEEB670006D7CA /* ContentView.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0432A01E24F1B41900D805EB /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		0432A02124F1CFB200D805EB /* NetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetManager.swift; sourceTree = "<group>"; };
 		0448AC5E24EEEB670006D7CA /* MeruPush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeruPush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0448AC6124EEEB670006D7CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0448AC6324EEEB670006D7CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0432A02024F1CF9C00D805EB /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0432A02124F1CFB200D805EB /* NetManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		0448AC5524EEEB670006D7CA = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +138,7 @@
 		044A991B24EF050200B675F3 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				0432A02024F1CF9C00D805EB /* Managers */,
 				044A994224EF0AA200B675F3 /* Resources */,
 				044A992D24EF086300B675F3 /* Settings */,
 				044A991F24EF057900B675F3 /* Models */,
@@ -147,6 +160,7 @@
 			children = (
 				044A992024EF058C00B675F3 /* RESTAPIModel.swift */,
 				044A994524EF0B2F00B675F3 /* TokenModel.swift */,
+				0432A01E24F1B41900D805EB /* Events.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -354,6 +368,7 @@
 				044A993B24EF090B00B675F3 /* Screen2Model.swift in Sources */,
 				044A994024EF092500B675F3 /* StartScreenView.swift in Sources */,
 				0448AC6224EEEB670006D7CA /* AppDelegate.swift in Sources */,
+				0432A02224F1CFB200D805EB /* NetManager.swift in Sources */,
 				044A993F24EF092500B675F3 /* StartScreenIntent.swift in Sources */,
 				044A994424EF0AAD00B675F3 /* Servers.swift in Sources */,
 				044A992F24EF087100B675F3 /* CommonSettings.swift in Sources */,
@@ -369,6 +384,7 @@
 				044A993924EF090B00B675F3 /* Screen2Intent.swift in Sources */,
 				044A993324EF08FD00B675F3 /* Screen1Intent.swift in Sources */,
 				044A992C24EF082E00B675F3 /* MainScreenModel.swift in Sources */,
+				0432A01F24F1B41900D805EB /* Events.swift in Sources */,
 				044A991E24EF051800B675F3 /* NetService.swift in Sources */,
 				044A993A24EF090B00B675F3 /* Screen2View.swift in Sources */,
 			);

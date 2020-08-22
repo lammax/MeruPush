@@ -16,8 +16,6 @@ class StartScreenIntent: ObservableObject {
     
     public static let sharedInstance = StartScreenIntent()
     
-    private let net = NetService.sharedInstance
-    private let encoder = JSONEncoder()
     private var settings: CommonSettings!
     
     //@Published var onAction: (() -> Void)?
@@ -30,17 +28,7 @@ class StartScreenIntent: ObservableObject {
     
     private func setupActions() {
         self.registerDevice = {
-            let api = REST.API.Token.putPushToken
-            let url = api.getUrl(for: Servers.addresses.first!)!
-            //tokenUUID: "50cbaa17-3fe5-4d1a-a18b-e4b43e788d01"
-            //"deviceId": "e901ff3d1e7ff5e1e98f4d95e1cff5e1e98f4d95e1c",
-            let regModel = Token.PutPush(pushToken: self.settings.pushToken)
-            let data = try? self.encoder.encode(regModel)
-            self.net.dataTask(for: data, with: api.additionalHeaders , with: url, restMethod: .POST) { (data, response, error) in
-                print(data)
-                print(response)
-                print(error)
-            }
+            NetManager.putPushToken(token: self.settings.pushToken)
         }
     }
     
