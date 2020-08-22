@@ -34,6 +34,7 @@ struct StartScreenView: View {
                 self.intent.registerDevice?()
             }) {
                 Text("Register device")
+                    .font(.title)
                     .foregroundColor(.white)
                     .background(Color.green)
             }
