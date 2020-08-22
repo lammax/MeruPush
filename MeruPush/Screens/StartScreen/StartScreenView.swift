@@ -26,6 +26,9 @@ struct StartScreenView: View {
                 .font(.title)
                 .foregroundColor(.white)
                 .background(Color.gray)
+                .lineLimit(nil)
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: UIScreen.main.bounds.width - 50.0)
             
             Button(action: {
                 self.intent.registerDevice?()
