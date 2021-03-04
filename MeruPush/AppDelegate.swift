@@ -23,7 +23,7 @@ import FirebaseInstanceID
  */
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate/*, MessagingDelegate*/ {
     
     let settings = CommonSettings.sharedInstance
     fileprivate let viewActionIdentifier = "VIEW_IDENTIFIER"
@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        Messaging.messaging().delegate = self
+        //Messaging.messaging().delegate = self
         UNUserNotificationCenter.current().delegate = self
         registerForPushNotifications()
         getTokenFromServer()

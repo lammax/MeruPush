@@ -36,6 +36,7 @@ class NetService {
         
         // insert data to the request
         if let data = data {
+            print(String(data: data, encoding: .utf8)! )
             request.httpBody = data
         }
         
